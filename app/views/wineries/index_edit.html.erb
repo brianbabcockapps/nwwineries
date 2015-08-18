@@ -1,0 +1,15 @@
+<h1>Update the Main Page</h1>
+
+<%= form_for(@main) do |f| %>
+
+  <%= f.label :title %>
+  <%= f.text_field :title, class: 'form-control' %>
+  
+  <%= f.label :paragraph, "Main Text" %>
+  <%= f.text_area :paragraph %>
+  
+  <%= f.label :graphic, "Upload an image" %>
+  <%= f.file_field :graphic %>
+  
+  <%= f.submit "Save changes", class: "btn btn-primary" %>
+<% end %> 
