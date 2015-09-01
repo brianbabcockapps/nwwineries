@@ -1,0 +1,46 @@
+
+<h1>New Winery</h1>
+
+  <%= form_for(@winery) do |f| %>
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+      
+    <%= f.label :tasting_room_hours %>
+    <%= f.text_field :tasting_room_hours %>
+      
+    <%= f.label :seasonal %>
+    <%= f.text_field :seasonal %>
+      
+    <%= f.label :tasting_room_cost, "Cost:" %>
+    <%= f.text_field :tasting_room_cost %>
+
+    <%= f.label :price_range, "Price Range:" %>
+    <%= f.text_field :price_range %>
+      
+    <%= f.label :reigon %>
+    <%= f.text_field :reigon %>
+
+    <%= f.label :street_address_1 %>
+    <%= f.text_field :street_address_1 %>
+      
+    <%= f.label :street_address_2 %>
+    <%= f.text_field :street_address_2 %>
+      
+    <%= f.label :city %>
+    <%= f.text_field :city %>
+      
+    <%= f.label :state %>
+    <%= f.text_field :state %>
+      
+    <%= f.label :zip %>
+    <%= f.text_field :zip %>
+      
+    <%= f.label :phone %>
+    <%= f.text_field :phone %>
+
+    <%= f.label :description, "Main Text" %>
+    <%= f.text_area :description %>
+    
+  <%= f.submit "Save changes", class: "btn btn-primary" %>
+<% end %> 
+

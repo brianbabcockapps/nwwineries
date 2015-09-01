@@ -1,10 +1,14 @@
 Rails.application.routes.draw do
   resources :mains
+  resources :wineries
   
   root 'wineries#main'
   
-  get 'wineries/winerylist'
-  post 'main' => 'wineries#created'
+  get  'winery_list' => 'wineries#winery_list'
+  get  'main_edit' => 'wineries#index_edit'
+  post 'mains' => 'wineries#created'
+  
+  post 'new' => 'wineries#save'
   
   
   

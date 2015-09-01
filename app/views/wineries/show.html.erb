@@ -1,0 +1,20 @@
+<h1><%= @winery.name %></h1>
+<br/><%= @winery.reigon %>
+
+<h3>Quick Info</h3>
+<ul>
+  <li>Hours - <%= @winery.tasting_room_hours %></li>
+  <li>Tasting Room Cost - <%= @winery.tasting_room_cost %></li>
+  <li>Wine Cost - <%= @winery.price_range %></li>
+</ul>
+
+<h3>Contact Info</h3>
+<ul>
+  <li>Address</li>
+  <li><%= @winery.street_address_1 %></li>
+  <li><%= @winery.street_address_2 %></li>
+  <li><%= @winery.city %> <%= @winery.state %> <% @winery.zip %></li>
+  <li><%= @winery.phone %></li>
+</ul>
+
+<p><%= @winery.description %></p>

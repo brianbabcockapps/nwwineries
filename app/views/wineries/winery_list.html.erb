@@ -1,0 +1,12 @@
+<h1>Winery List</h1>
+<p></p>
+<table>
+<% @wineries.each do |winery| %>
+  <tr>
+    <td><%= winery.name %></td>
+    <td><%= winery.city %></td>
+    <td><%= winery.tasting_room_hours %></td>
+  </tr>
+<% end %>
+</table>
+
