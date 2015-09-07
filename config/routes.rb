@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'sessions/new'
+
   get 'users/new'
 
   resources :mains
@@ -11,8 +13,10 @@ Rails.application.routes.draw do
   get  'main_edit' => 'wineries#index_edit'
   get  'signup' => 'users#new'
   post 'mains' => 'wineries#created'
-  
   post 'new' => 'wineries#save'
+  get   'login' =>  'sessions#new'
+  post  'login' =>  'sessions#create'
+  delete  'logout' => 'sessions#destroy'
   
   
   
