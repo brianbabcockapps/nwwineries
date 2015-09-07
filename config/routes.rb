@@ -1,11 +1,15 @@
 Rails.application.routes.draw do
+  get 'users/new'
+
   resources :mains
   resources :wineries
+  resources :users
   
   root 'wineries#main'
   
   get  'winery_list' => 'wineries#winery_list'
   get  'main_edit' => 'wineries#index_edit'
+  get  'signup' => 'users#new'
   post 'mains' => 'wineries#created'
   
   post 'new' => 'wineries#save'
