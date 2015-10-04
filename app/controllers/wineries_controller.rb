@@ -18,12 +18,14 @@ class WineriesController < ApplicationController
       render 'index_edit'
     end
   end
-  
+
   def show
+    @main = Main.order("updated_at").last
     @winery = Winery.find(params[:id])
   end
   
   def new
+    @main = Main.order("updated_at").last
     @winery = Winery.new
   end
   
@@ -38,7 +40,7 @@ class WineriesController < ApplicationController
   
   def winery_list
     
-    
+    @main = Main.order("updated_at").last
     if(params.has_key?(:range))
       range = params[:range].to_i
     else

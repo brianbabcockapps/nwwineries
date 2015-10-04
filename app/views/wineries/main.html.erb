@@ -1,16 +1,20 @@
 <h1><%= @main.title %></h1>
 <p><%= @main.paragraph %></p>
 
-<%= form_for(@main) do |f| %>
+<% if logged_in? %>
+  <div class: "main_edit">
+  <%= form_for @main, html: { multipart: true } do |f| %>
 
-  <%= f.label :title %>
-  <%= f.text_field :title, class: 'form-control' %>
+    <p><%= f.label :title %><br/>
+    <%= f.text_field :title, class: 'form-control' %></p>
   
-  <%= f.label :paragraph, "Main Text" %>
-  <%= f.text_area :paragraph %>
+    <p><%= f.label :paragraph, "Main Text" %><br/>
+    <%= f.text_area :paragraph %></p>
   
-  <%= f.label :graphic, "Upload an image" %>
-  <%= f.file_field :graphic %>
+    <p><%= f.label :graphic, "Upload the background image" %><br/>
+    <%= f.file_field :graphic %></p>
   
-  <%= f.submit "Save changes", class: "btn btn-primary" %>
-<% end %> 
+    <p><%= f.submit "Save changes", class: "btn btn-primary" %></p>
+  <% end %> 
+  </div>
+<% end %>

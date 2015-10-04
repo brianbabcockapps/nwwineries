@@ -1,12 +1,24 @@
 <h1>Winery List</h1>
 <p></p>
 <table>
-<% @wineries.each do |winery| %>
   <tr>
-    <td><%= winery.name %></td>
-    <td><%= winery.city %></td>
-    <td><%= winery.tasting_room_hours %></td>
+    <th>Winery Name</th>
+    <th>Location</th>
+    <th>Hours</th>
   </tr>
-<% end %>
+  <% i = 0 %>
+  <% @wineries.each do |winery| %>
+    <% row = i % 2 %>
+    <% rowColor = "wine_table_row_" + row.to_s %>
+    <tr class = "<%= rowColor %>">
+      <td><%= link_to winery.name, winery %></td>
+      <td><%= winery.city %></td>
+      <td><%= winery.tasting_room_hours %></td>
+    </tr>
+    <% i = i + 1 %>
+  <% end %>
 </table>
 
+<% if logged_in? %>
+  <p><%= link_to "Add New", new_winery_path %></p>
+<% end %>

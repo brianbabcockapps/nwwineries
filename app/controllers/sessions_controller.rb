@@ -1,8 +1,10 @@
 class SessionsController < ApplicationController
   def new
+    @main = Main.order("updated_at").last
   end
   
   def create
+    @main = Main.order("updated_at").last
     user = User.find_by(email: params[:session][:email].downcase)
     if user && user.authenticate(params[:session][:password])
       # Log the user in and redirect to the user's show page.
@@ -17,6 +19,7 @@ class SessionsController < ApplicationController
   end
   
   def destroy
+    @main = Main.order("updated_at").last
     log_out if logged_in?
     redirect_to root_url
   end

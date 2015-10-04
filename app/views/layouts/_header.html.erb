@@ -1,10 +1,18 @@
     <header  class = "header">
-      <p><%= link_to "Northwest", root_path, id: "logo" %> <span id="cursive">Wineries</span></p>
-      <ul>
-        <li><%= link_to "Winery List", '#' %></li>
+      <p><%= link_to "NW", root_path, id: "logo" %></p>
+      <div id="cursive"><%= link_to "Wineries", root_path %></div>
+      <ul id="header_links">
+        <li><%= link_to "Winery List", winery_list_path %></li>
+        <!--
         <li><%= link_to "Things To Do", '#' %></li>
         <li><%= link_to "NW Wine in the News", '#' %></li>
         <li><%= link_to "Blog", '#' %></li>
-        <li><%= link_to "Contact", '#' %></li>
+        <li><%= link_to "Contact", '#' %></li> -->
+        
+        <% if logged_in? %>
+          <li><%= link_to 'Sign Out', logout_path %></li>
+        <% else %>
+          <li><%= link_to 'Log In', login_path %></li>
+        <% end %>
       </ul>
     </header>

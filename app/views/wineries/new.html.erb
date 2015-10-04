@@ -1,46 +1,54 @@
 
 <h1>New Winery</h1>
-
+  
+  <div class="new_form">
   <%= form_for(@winery) do |f| %>
-    <%= f.label :name %>
-    <%= f.text_field :name %>
+    <div class="both">
+      <div class="left"><%= f.label :name %><br/>
+      <%= f.text_field :name %></div>
       
-    <%= f.label :tasting_room_hours %>
-    <%= f.text_field :tasting_room_hours %>
+      <div class="right"><%= f.label :tasting_room_hours %><br/>
+      <%= f.text_field :tasting_room_hours %></div>
       
-    <%= f.label :seasonal %>
-    <%= f.text_field :seasonal %>
+      <div class="left"><%= f.label :seasonal %><br/>
+      <%= f.text_field :seasonal %></div>
       
-    <%= f.label :tasting_room_cost, "Cost:" %>
-    <%= f.text_field :tasting_room_cost %>
+      <div class ="right"><%= f.label :tasting_room_cost, "Cost:" %><br/>
+      <%= f.text_field :tasting_room_cost %></div>
 
-    <%= f.label :price_range, "Price Range:" %>
-    <%= f.text_field :price_range %>
+      <div class="left"><%= f.label :price_range, "Price Range:" %><br/>
+      <%= f.text_field :price_range %></div>
       
-    <%= f.label :reigon %>
-    <%= f.text_field :reigon %>
+      <div class="right"><%= f.label :reigon %><br/>
+      <%= f.text_field :reigon %></div>
+    </div>
 
-    <%= f.label :street_address_1 %>
-    <%= f.text_field :street_address_1 %>
+    <div class="address_all"><%= f.label :street_address_1 %><br/>
+    <%= f.text_field :street_address_1 %></div>
       
-    <%= f.label :street_address_2 %>
-    <%= f.text_field :street_address_2 %>
+    <div class="address_all"><%= f.label :street_address_2 %><br/>
+    <%= f.text_field :street_address_2 %></div>
       
-    <%= f.label :city %>
-    <%= f.text_field :city %>
+    <div class="address">
+      <div class="address_left"><%= f.label :city %></div>
+      <div class="address_left"><%= f.text_field :city %></div>
       
-    <%= f.label :state %>
-    <%= f.text_field :state %>
+      <div class="address_middle"><%= f.label :state %></div>
+      <div class="address_middle"><%= f.text_field :state %></div>
       
-    <%= f.label :zip %>
-    <%= f.text_field :zip %>
+      <div class="address_right"><%= f.label :zip %></div>
+      <div class="address_right"><%= f.text_field :zip %></div>
+    </div>
       
-    <%= f.label :phone %>
-    <%= f.text_field :phone %>
+    <div class="address_all">
+      <div class="left"><%= f.label :phone %><br/>
+      <%= f.text_field :phone %></div>
+    </div>
 
-    <%= f.label :description, "Main Text" %>
-    <%= f.text_area :description %>
+    <p><%= f.label :description, "Main Text" %><br/>
+    <%= f.text_area :description, class: "winery_paragraph" %></p>
     
-  <%= f.submit "Save changes", class: "btn btn-primary" %>
-<% end %> 
+    <p><%= f.submit "Save changes", class: "btn btn-primary" %></p>
+  <% end %> 
+  </div>
 

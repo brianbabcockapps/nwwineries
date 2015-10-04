@@ -4,19 +4,19 @@
       <%= form_for (@user) do |f| %>
         <%= render 'shared/error_messages' %>
         
-        <%= f.label :name %>
-        <%= f.text_field :name, class: 'form-contorl' %>
+        <p><%= f.label :name %><br/>
+        <%= f.text_field :name, class: 'sign_in_field' %></p>
         
-        <%= f.label :email %>
-        <%= f.email_field :email, class: 'form-contorl' %>
+        <p><%= f.label :email %><br/>
+        <%= f.email_field :email, class: 'sign_in_field' %></p>
         
-        <%= f.label :password %>
-        <%= f.password_field :password, class: 'form-contorl' %>
+        <p><%= f.label :password %><br/>
+        <%= f.password_field :password, class: 'sign_in_field' %></p>
         
-        <%= f.label :password_confirmation, "Confirmation" %>
-        <%= f.password_field :password_confirmation, class: 'form-contorl' %>
+        <p><%= f.label :password_confirmation, "Confirmation" %><br/>
+        <%= f.password_field :password_confirmation, class: 'sign_in_field' %></p>
         
-        <%= f.submit "Create my account", class: "submit_button" %>
+        <p><%= f.submit "Create my account", class: "btn submit_button" %></p>
       <% end %>
     </div>
   </div>
