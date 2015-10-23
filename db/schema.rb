@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150915033223) do
+ActiveRecord::Schema.define(version: 20151007044741) do
 
   create_table "mains", force: :cascade do |t|
     t.string   "title"
@@ -49,12 +49,12 @@ ActiveRecord::Schema.define(version: 20150915033223) do
     t.string   "state"
     t.string   "zip"
     t.string   "phone"
-    t.string   "longitude"
-    t.string   "latitude"
     t.decimal  "tasting_room_cost"
     t.datetime "created_at",         null: false
     t.datetime "updated_at",         null: false
     t.text     "description"
+    t.float    "longitude"
+    t.float    "latitude"
   end
 
 end

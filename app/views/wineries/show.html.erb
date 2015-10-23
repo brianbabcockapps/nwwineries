@@ -8,6 +8,9 @@
   <li>Wine Cost - <%= @winery.price_range %></li>
 </ul>
 
+<div id="map"></div>
+
+
 <h3>Contact Info</h3>
 <ul class="winery_contact">
   <li><%= @winery.street_address_1 %> <%= @winery.street_address_2 %></li>
@@ -16,3 +19,23 @@
 </ul>
 
 <p><%= @winery.description %></p>
+
+<script type="text/javascript">
+
+  var map;
+  var myLatLng = {lat: <%= @winery.latitude %>, lng: <%= @winery.longitude %>}
+  function initMap() {
+    map = new google.maps.Map(document.getElementById('map'), {
+      center: myLatLng,
+      zoom: 18
+    });
+  
+  
+  var marker = new google.maps.Marker({
+    position: myLatLng,
+    map: map,
+    title: 'Hello World!'
+  });
+  }
+
+</script>
