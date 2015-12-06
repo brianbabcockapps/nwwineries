@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  winery_serial_num: 1
+  winery_id: 1
+  active: false
+  last_active: 2015-11-28
+
+two:
+  winery_serial_num: 1
+  winery_id: 1
+  active: false
+  last_active: 2015-11-28

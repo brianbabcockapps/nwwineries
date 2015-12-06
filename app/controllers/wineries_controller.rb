@@ -31,10 +31,24 @@ class WineriesController < ApplicationController
   
   def create
     @winery = Winery.new(winery_params)
+    @winery.active = true
+    @wineryHistory = @winery.wineryHistories.build(winery_params)
     if @winery.save
+      @wineryHistory.save
       redirect_to @winery
     else
-      render 'index_edit'
+      render 'main_edit'
+    end
+  end
+  
+  def update
+    @winery = Winery.find(params[:id])
+    @wineryHistory = @winery.wineryHistories.build(winery_params)
+    if @winery.update_attributes(winery_params)
+      @wineryHistory.save
+      redirect_to @winery
+    else
+      render 'main_edit'
     end
   end
   
@@ -51,6 +65,11 @@ class WineriesController < ApplicationController
       start = params[:start].to_i
     else
       start = 0
+    end
+    
+    if (start >= Winery.count(:all))
+      start = Winery.count(:all) - range
+      params[:start] = start
     end
     
     @wineries = Winery.limit(range).offset(start)

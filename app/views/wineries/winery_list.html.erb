@@ -6,6 +6,29 @@
     <th>Location</th>
     <th>Hours</th>
   </tr>
+  
+    <% if(params.has_key?(:range)) %>
+      <% range = params[:range].to_i %>
+    <%  else %>
+      <% range = 10 %>
+    <% end %>
+    
+    <% if (params.has_key?(:start)) %>
+      <% start = params[:start].to_i %>
+      <% back = start - range %>
+    <% else %>
+      <% start = 0 %>
+    <% end %>
+  
+    <% back = start - range %>
+    <% forward = start + range %>
+    
+    <% if back < 0 %>
+      <% back = 0 %>
+    <% end %>
+    
+    <% count = Winery.count(:all) %>
+  
   <% i = 0 %>
   <% @wineries.each do |winery| %>
     <% row = i % 2 %>
@@ -18,6 +41,19 @@
     <% i = i + 1 %>
   <% end %>
 </table>
+
+<ul id="forward_and_back">
+   <li> <% if start == 0 %>
+          <
+        <% else %>
+          <%= link_to "<", winery_list_path(:start => back, :range => range) %>
+        <% end %></li>
+    <li> <% if forward >= count %>
+          >
+        <% else %>
+          <%= link_to ">", winery_list_path(:start => forward, :range => range)  %>
+        <% end %></li>
+</ul>
 
 <% if logged_in? %>
   <p><%= link_to "Add New", new_winery_path %></p>

@@ -11,7 +11,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151007044741) do
+ActiveRecord::Schema.define(version: 20151205042719) do
+
+  create_table "active_wineries", force: :cascade do |t|
+    t.integer  "winery_serial_num"
+    t.integer  "winery_id"
+    t.boolean  "active"
+    t.date     "last_active"
+    t.datetime "created_at",        null: false
+    t.datetime "updated_at",        null: false
+  end
 
   create_table "mains", force: :cascade do |t|
     t.string   "title"
@@ -55,6 +64,31 @@ ActiveRecord::Schema.define(version: 20151007044741) do
     t.text     "description"
     t.float    "longitude"
     t.float    "latitude"
+    t.string   "website"
+    t.boolean  "active"
+  end
+
+  create_table "winery_histories", force: :cascade do |t|
+    t.string   "name"
+    t.integer  "order"
+    t.string   "price_range"
+    t.string   "reigon"
+    t.string   "tasting_room_hours"
+    t.string   "seasonal"
+    t.string   "street_address_1"
+    t.string   "street_address_2"
+    t.string   "city"
+    t.string   "state"
+    t.string   "zip"
+    t.string   "phone"
+    t.string   "longitude"
+    t.string   "latitude"
+    t.decimal  "tasting_room_cost"
+    t.string   "website"
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
+    t.integer  "winery_id"
+    t.text     "description"
   end
 
 end
