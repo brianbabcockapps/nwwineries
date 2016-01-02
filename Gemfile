@@ -45,6 +45,11 @@ group :development, :test do
   gem 'spring'
   
   gem 'geocoder'
+  
+  gem 'user_agent_parser'
+  
+
+
 end
 
 group :production do

@@ -47,19 +47,22 @@
       <div class="left"><%= f.label :name %><br/>
       <%= f.text_field :name %></div>
       
-      <div class="right"><%= f.label :tasting_room_hours %><br/>
+      <div class="right"><%= f.label :website %><br/>
+      <%= f.text_field :website %></div>
+      
+      <div class="left"><%= f.label :tasting_room_hours %><br/>
       <%= f.text_field :tasting_room_hours %></div>
       
-      <div class="left"><%= f.label :seasonal %><br/>
+      <div class="right"><%= f.label :seasonal %><br/>
       <%= f.text_field :seasonal %></div>
       
-      <div class ="right"><%= f.label :tasting_room_cost, "Cost:" %><br/>
+      <div class="left"><%= f.label :tasting_room_cost, "Cost:" %><br/>
       <%= f.text_field :tasting_room_cost %></div>
 
-      <div class="left"><%= f.label :price_range, "Price Range:" %><br/>
+      <div class="right"><%= f.label :price_range, "Price Range:" %><br/>
       <%= f.text_field :price_range %></div>
       
-      <div class="right"><%= f.label :reigon %><br/>
+      <div class="left"><%= f.label :reigon %><br/>
       <%= f.text_field :reigon %></div>
     </div>
 
@@ -80,10 +83,17 @@
       <div class="address_right"><%= f.text_field :zip %></div>
     </div>
       
-    <div class="address_all">
-      <div class="left"><%= f.label :phone %><br/>
-      <%= f.text_field :phone %></div>
+    <div class="address_all"><%= f.label :phone %><br/>
+      <%= f.text_field :phone %>
     </div>
+    
+    <div class="both">
+      <div class="left"><%= f.label :latitude %><br/>
+      <%= f.text_field :latitude %></div>
+      
+      <div class="right"><%= f.label :longitude %><br/>
+      <%= f.text_field :longitude %></div>
+    </div><br/>
 
     <p><%= f.label :description, "Main Text" %><br/>
     <%= f.text_area :description, class: "winery_paragraph" %></p>

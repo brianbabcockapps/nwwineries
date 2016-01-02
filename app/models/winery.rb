@@ -7,7 +7,7 @@ class Winery < ActiveRecord::Base
   
   private
   def address
-    address ="#{street_address_1} #{street_address_2} #{city} #{state} #{zip}"
+    address ="#{street_address_1} #{street_address_2}, #{city}, #{state}, #{zip}"
   end
 
 end
